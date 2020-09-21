@@ -1,34 +1,43 @@
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
-
-
-
+let votingAge = 17;
+if (votingAge >= 18) {
+    console.log('true');
+}else {
+    console.log('false');
+}
 
 //Task b: declare a variable and then use a conditional to change the value of that variable based on the value assigned to a second variable (no function required)
-
-
-
+let height = 6;
+let tall = "yes";
+    if (height < 6) {
+       tall = "no"
+    }
+    console.log(tall)
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-
-
-
-
+let year = Number("1999");
+    console.log(year);
 
 //Task d: Write a function to multiply a*b 
-
-
+function multTwoNums (a,b){
+    return a * b;
+}
+console.log(multTwoNums(2,3));
 
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
-
-
-
+let yourAge = 30;
+let dogYears = 7;
+function dogAge (yourAge, dogYears) {
+    return yourAge * dogYears
+}
+console.log(dogAge (yourAge, dogYears))
 
 
 /************************************************************** Task 3 **************************************************************/
@@ -43,13 +52,36 @@
 // > 15lbs - 2% of their body weight 
 
 // Puppies less than 1 year
-// 2 - 4 months 10% of their body weight
+// 2 - 4 months 10% of their body weight 
 // 4 - 7 months 5% of their body weight 
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
+let dogA = .17;  
+let dogWeight=15;
+let percentage= 0.00;
 
+if (dogA >=0.17 && dogA <=0.33){
+    percentage=0.10
+} else if (dogA >=0.34 && dogA <=0.58){
+    percentage=0.05
+} else if (dogA >=0.59 && dogA <1){
+    percentage=0.04
+}else if (dogWeight >=0 && dogWeight <=5 && dogA >= 1){
+    percentage=0.05
+} else if (dogWeight >=6 && dogWeight <=10 && dogA >= 1){
+    percentage=0.04
+} else if (dogWeight >=11 && dogWeight <=15 && dogA >= 1){
+    percentage=0.03
+}else if (dogWeight >=15 && dogA >= 1){
+    percentage=0.02
+}
+// console.log(percentage)
+function dogFeeder (dogWeight, percentage){
+    return dogWeight * percentage;
+}
+let reqs = dogFeeder (dogWeight, percentage)
+console.log(reqs)
 
 
 
@@ -59,30 +91,50 @@
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
+ 
 
-  
-  
+let playRps =function rPS(){
+    let input = prompt("Rock,Paper,Scissors?", "<your choice>");
+    let rando = Math.random();
+if (rando <=.333){
+    alert ("you win!")
+}else if (rando >.333 && rando <= .666 ){
+    alert ("Its a tie!")
+}else if (rando >.666 && rando <= 1 ){
+    alert ("You Lose!")
+    }
+}
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+let km = 3;
+const kmConversion = 0.62137119;
+let miles = km * kmConversion;
 
-
-
-
-
+console.log(miles)
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
+let feet = 5280;
+const cmConversion = 30.48;
+const cm = feet * cmConversion;
 
-
-
-
+console.log(cm)
 /************************************************************** Task 6 **************************************************************/
 // 99 bottles of soda on the wall
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
-  
+let text = ""
+let number = 20;
+let numberLeft = 19
 
+do {
+text += number + " bottles of soda on the wall, " + number + " bottles of soda, take one down pass it around! " + numberLeft + " bottles of soda on the wall! ";
+  number--;
+  numberLeft--;
+ 
+}
+while (number > 0); 
+console.log(text)
 
 
 
@@ -95,9 +147,19 @@
 //60s should be D 
 //and anything below 60 should be F
   
+let numGrade = 88
 
-  
-  
+if (numGrade >= 90){
+    console.log ("You got an A!")
+} else if (numGrade < 90 && numGrade >= 80){
+    console.log("You got a B!")
+} else if (numGrade < 80 && numGrade >=70){
+    console.log("Atleast its a C.")
+} else if (numGrade < 70 && numGrade >=60){
+    console.log("Well atleast it's a D.")
+} else if (numGrade < 60){
+    console.log("Yep, you F-ailed ")
+}
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
@@ -111,8 +173,4 @@
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
-
-
 
